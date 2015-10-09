@@ -22,5 +22,3 @@ loader.loadArrayAsync(users, usersIds, function (err, arr, duration) {
         console.log("ctor doorlooptijd bedraagt :", duration);
     }
 });
-
-setTimeout(function () { process.exit() }, 15000 );

@@ -1,5 +1,5 @@
 /*
- * constructor pattern voor Laoder
+ * constructor pattern for Loader
  *
  */
 
@@ -9,9 +9,6 @@ var events = require("events"),
     emitter = new events.EventEmitter();
 
 Loader = function (array, elements) {
-    //private variabelen
-    var author = "Johan";
-    var self = this;
 
     //publieke eigenschappen voor initialisatie
     this.array = array;
@@ -35,7 +32,9 @@ Loader.prototype = {
     duration: function () { return (new Date().getTime() - this.startTime); } ,
     loadAsync: function (element , cb) {
         if (element === "ERROR") {
-            cb("ERROR" , null);
+            setTimeout(function () {
+                cb("ERROR" , null);
+            }, 1000);
         } else {
             setTimeout(function () { cb(null, element + " is loaded"); }, 1000);
         }
