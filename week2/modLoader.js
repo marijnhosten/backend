@@ -2,7 +2,6 @@
 
 var Loader = (function () {
 
-    //private vars
     var startTime = startTime ? startTime : new Date().getTime();
     // de callback dient enkel nog om database call te emuleren
     var delay = 1000;
@@ -15,7 +14,10 @@ var Loader = (function () {
 
     var loadAsync = function (element, cb) {
         if(element === "ERROR"){
-            cb("ERROR", null);
+            setTimeout(function () {
+                cb("ERROR", null);
+            },delay);
+
         } else {
             setTimeout(function (){
                 cb(null, "element: " + element + " async loaded");
@@ -24,6 +26,7 @@ var Loader = (function () {
     };
 
     var loadArrayAsync = function (arrayA, elements, cb) {
+
         elements.forEach(function(element, index){
             loadAsync(element, function (err, element){
 

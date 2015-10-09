@@ -5,7 +5,7 @@ var users = [];
 
 Loader.loadArrayAsync(users, usersIds, function(err, arr, duration){
     if(err === "ERROR"){
-        console.log("er is een error " + new Date().getMilliseconds());
+        console.log("er is een error " + new Date());
     }else {
         console.log("De laadtijd is: " + Loader.duration());
     }
