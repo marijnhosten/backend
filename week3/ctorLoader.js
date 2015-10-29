@@ -1,8 +1,3 @@
-/*
- * constructor pattern for Loader
- *
- */
-
 var Loader, module;
 
 var events = require("events"),
@@ -21,7 +16,6 @@ Loader = function (array, elements) {
 
 Loader.prototype = {
     //instance properties
-    //startTime: this.startTime? this.startTime: new Date().getTime(),
     self: this,
 
     _startTime: "",
@@ -29,7 +23,7 @@ Loader.prototype = {
     set startTime(value) { _startTime = value; },
 
     //instance methods
-    duration: function () { return (new Date().getTime() - this.startTime); } ,
+    duration: function () { return (new Date().getTime() - this.startTime); },
     loadAsync: function (element , cb) {
         if (element === "ERROR") {
             setTimeout(function () {
